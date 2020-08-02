@@ -1,0 +1,8 @@
+{
+    "listen" : { 
+         "error": [
+            "Sorry can you repeat that ", "sorry i didnt hear that", "Sorry I think i have missinterpreted can you please repeat"
+        ]
+    },
+    "help": [ "what can i do for you?", "do you need any help?"]
+}
