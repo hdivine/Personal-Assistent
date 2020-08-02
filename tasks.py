@@ -33,9 +33,7 @@ def chrome_subprocess(drive,txt):
         drive.find_element_by_name("q").clear()
         drive.find_element_by_name("q").send_keys(txt[7:])
         drive.find_element_by_name("q").send_keys(Keys.RETURN)
-        # drive.clear()
-
-
+        
         speak("these are some search results")
         return True, False
 
@@ -87,8 +85,6 @@ def play_music(mus):
 
 import wikipedia
 
-
-
 def search_wiki(msg):
     speak(f"Searching results for {msg}")
     info = wikipedia.summary(msg)
@@ -106,12 +102,8 @@ def search_wiki(msg):
         elif re.match(r".*no.*", txt):
             speak("Thanks for asking me, i hope it helped!")
             break
-
-
         speak("should i continue?")
         txt = listen()
-    
-    # wiki_subprocess(txt)
 
 
 
@@ -146,41 +138,3 @@ import pyautogui as pag
 def type(msg):
     speak("here you go... ")
     pag.write(msg[5:], interval=0.01)
-
-# dynamic clicks ###################################################################################################################################
-
-# import time
-# from threading import Thread as trd
-
-# stop = "0"
-
-# def input_timeout():
-#     global stop
-#     stop = input()
-#     return
-
-# def dynamic():
-#     new_pos = 0
-#     inptThrd = trd(target=input_timeout)
-#     inptThrd.start()
-#     while True:
-
-#         curr_pos = pag.position()
-
-#         if curr_pos == new_pos:
-#             pass
-        
-        
-
-#         if stop == "1":
-#             inptThrd.join()
-#             return
-#         else:
-#             print("would you like to stop\n1.yes\n2.no")
-
-#             time.sleep(1)
-#             if stop != "1":
-#                 new_pos = pag.position()
-#                 time.sleep(3)
-
-###################################################################################################################################

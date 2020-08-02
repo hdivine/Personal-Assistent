@@ -54,7 +54,6 @@ def listen():
 
 # speak ################################################################################################################################################
 speech_engine = pyttsx3.init()
-# speech_engine.setProperty("voice", speech_engine.getProperty("voices")[28].id)
 
 def speak(msg):
     speech_engine.say(msg)
@@ -87,9 +86,6 @@ def process(msg):
     elif re.match(r"type .*", msg):
         tasks.type(msg)
         return
-    
-    # elif "dynamic click" == msg:
-    #     tasks.dynamic()
 
     elif re.match(r"close current .*", msg):
         pag.hotkey("command","q")
@@ -102,7 +98,7 @@ def process(msg):
     else:
         speak(random.choice(knowledge["listen"]["error"]))
 
-# main #########################//*[@id="video-title"]######################################################################################################################
+# main 
 
 def main():
 
@@ -113,7 +109,6 @@ def main():
     # listen & process
     txt = ""
     while 1:
-        # os.system("clear")
         if not re.match(r".*click.*", txt):
             speak(random.choice(knowledge["help"]))
         txt = listen()
