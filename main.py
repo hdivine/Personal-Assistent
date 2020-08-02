@@ -6,7 +6,6 @@ pip3 install speechRecognition
 pip3 install pyttsx3
 pip3 install selenium
     Download chromewebdriver from https://chromedriver.chromium.org and save it to /usr/local/bin
-/Users/hdivine/Documents/py/MrRobot_personal_assistent/main.py
 """
 
 import re, random
@@ -29,7 +28,6 @@ with open("/Users/hdivine/Documents/GitHub/Personal-Assistent/knowledge.json") a
 #  listening once ################################################################################################################################################
 recognize = sp_recog.Recognizer()
 def listen_once():
-    # os.system("clear")
     print("listening")
     with sp_recog.Microphone() as source:
         audio = recognize.listen(source, timeout=5*60)
